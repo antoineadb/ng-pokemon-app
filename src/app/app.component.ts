@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { PokemonModule } from './pokemon/pokemon.module';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
-  `,
-  styles: [],
+    templateUrl: 'app.component.html',
+    imports: [
+      CommonModule,     
+      RouterModule,
+      FormsModule,
+      PokemonModule
+    ]
 })
-export class AppComponent {
-  title = 'ng-pokemon-app';
-}
+
+
+export class AppComponent {}
+
