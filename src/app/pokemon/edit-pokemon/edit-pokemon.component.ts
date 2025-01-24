@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-edit-pokemon',
   imports: [PokemonFormComponent, CommonModule],
   template: `
-    <h2>Editer {{ pokemon?.name }}</h2>
+    <h2 class="center">Editer {{ pokemon?.name }}</h2>
     <p *ngIf="pokemon" class="center">
       <img *ngIf="pokemon" [src]="pokemon.picture" />
     </p>
@@ -29,7 +29,7 @@ export class EditPokemonComponent implements OnInit {
   ngOnInit():void{
   const pokemonId: string|null = this.route.snapshot.paramMap.get('id');
   if(pokemonId){
-    this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
+    this.pokemonService.getPokemonById(+pokemonId).subscribe(pokemon => this.pokemon =pokemon);
     console.log('Loaded Pokémon:', this.pokemon);
   } else {
     console.error('Invalid Pokémon ID');
