@@ -9,9 +9,13 @@ import { PokemonService } from '../pokemon.service';
   selector: 'app-detail-pokemon',
   imports: [CommonModule,PokemonTypeColorPipe],
   templateUrl: './detail-pokemon.component.html',
+<<<<<<< HEAD
   standalone:true,
   providers: [PokemonService],
   styleUrls: ['./detail-pokemon.component.css']
+=======
+  standalone:true
+>>>>>>> 82cc5be1871cd019770499db0496363d5c19c1fc
 })
 export class DetailPokemonComponent implements OnInit {
   pokemonList: Pokemon[];
@@ -20,12 +24,17 @@ export class DetailPokemonComponent implements OnInit {
   constructor( 
     private route:ActivatedRoute, 
     private router:Router,
+<<<<<<< HEAD
     private pokemonService: PokemonService
+=======
+    private pokemonservice: PokemonService
+>>>>>>> 82cc5be1871cd019770499db0496363d5c19c1fc
   ){}
 
   ngOnInit(): void {    
     const pokemonId: string|null = this.route.snapshot.paramMap.get('id');
     if(pokemonId){
+<<<<<<< HEAD
       this.pokemonService.getPokemonById(+pokemonId)
       .subscribe(pokemon => this.pokemon =pokemon);
     }
@@ -36,13 +45,21 @@ export class DetailPokemonComponent implements OnInit {
     .subscribe(()=>this.goToPokemonList());
   }
 
+=======
+      this.pokemon = this.pokemonservice.getPokemonById(+pokemonId);
+    }
+  }
+>>>>>>> 82cc5be1871cd019770499db0496363d5c19c1fc
   goToPokemonList(){
     this.router.navigate(['/pokemons']);
   }
 
+<<<<<<< HEAD
   goToEditPokemon(pokemon: Pokemon){       
     this.router.navigate(['/edit/pokemon', pokemon.id]);
   }
 
 
+=======
+>>>>>>> 82cc5be1871cd019770499db0496363d5c19c1fc
 }
