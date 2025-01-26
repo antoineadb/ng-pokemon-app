@@ -14,7 +14,7 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./detail-pokemon.component.css']
 })
 export class DetailPokemonComponent implements OnInit {
-  pokemonList: Pokemon[];
+  pokemonList: Pokemon[] | undefined;
   pokemon:Pokemon|undefined;
 
   constructor( 
@@ -32,8 +32,10 @@ export class DetailPokemonComponent implements OnInit {
   }
 
   deletePokemon(pokemon:Pokemon){
+    if(pokemon.id){
     this.pokemonService.deletePokemonById(pokemon.id)
     .subscribe(()=>this.goToPokemonList());
+    }
   }
 
   goToPokemonList(){

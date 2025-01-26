@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 })
 export class ListPokemonComponent implements OnInit {
   
-  pokemonList:Pokemon[];
+  pokemonList:Pokemon[]=[] ;
   
   constructor( private router:Router, private pokemonservice: PokemonService){}
   
