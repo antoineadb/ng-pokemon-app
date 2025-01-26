@@ -18,7 +18,7 @@ import { PokemonService } from '../pokemon.service';
 >>>>>>> 82cc5be1871cd019770499db0496363d5c19c1fc
 })
 export class DetailPokemonComponent implements OnInit {
-  pokemonList: Pokemon[];
+  pokemonList: Pokemon[] | undefined;
   pokemon:Pokemon|undefined;
 
   constructor( 
@@ -41,8 +41,10 @@ export class DetailPokemonComponent implements OnInit {
   }
 
   deletePokemon(pokemon:Pokemon){
+    if(pokemon.id){
     this.pokemonService.deletePokemonById(pokemon.id)
     .subscribe(()=>this.goToPokemonList());
+    }
   }
 
 =======
