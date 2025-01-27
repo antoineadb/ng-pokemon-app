@@ -5,12 +5,13 @@ import { CommonModule } from '@angular/common';
 import { BorderCardDirective } from '../border-card.directive';
 import { PokemonService } from '../pokemon.service';
 import { Router } from '@angular/router';
+import { SearchPokemonComponent } from '../search-pokemon/search-pokemon.component';
 
 
 
 @Component({
   selector: 'app-list-pokemon',
-  imports: [PokemonTypeColorPipe, CommonModule, BorderCardDirective],
+  imports: [PokemonTypeColorPipe, CommonModule, BorderCardDirective,SearchPokemonComponent],
   templateUrl: './list-pokemon.component.html',
   standalone:true,
   providers: [PokemonService]

@@ -1,7 +1,8 @@
-import { Component, importProvidersFrom } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { PokemonModule } from './pokemon/pokemon.module';
+import { PokemonModule } from './app/pokemon/pokemon.module';
+
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,7 @@ import { PokemonModule } from './pokemon/pokemon.module';
       CommonModule,     
       RouterModule,
       PokemonModule
-    ],
-    
+    ]
 })
 
 
